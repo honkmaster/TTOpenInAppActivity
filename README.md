@@ -1,6 +1,6 @@
 # TTOpenInActivity
 
-`TTOpenInActivity` is a `UIActivity` subclass that provides an "Open In ..." action to a `UIActivityViewController`. `TTOpenInActivity` uses UIDocumentInteractionController with "Open In ...".
+`TTOpenInActivity` is a `UIActivity` subclass that provides an "Open In ..." action to a `UIActivityViewController`. `TTOpenInActivity` uses an UIDocumentInteractionController to present all Apps than can handle the document specified with a file URL.
 
 ![TTOpenInActivity screenshot](http://i49.tinypic.com/1pf29t.png "TTOpenInActivity screenshot")
 
@@ -15,14 +15,14 @@ Add the `TTOpenInActivity` subfolder to your project. There are no required libr
 
 ## Usage.
 
-- We need do keep an referemce to the superview (UIActionSheet). In this way we can dismiss the UIActionSheet ans instead display the UIDocumentInterActionController.
-- `TTOpenInActivity` needs to be initalized with an View and a) a Rect (iPhone) or b) a BarButton (iPad) from where it can present the UIDocumentInterActionController.
+- We need do keep an referemce to the superview (UIActionSheet). In this way we dismiss the UIActionSheet ans instead display the UIDocumentInterActionController.
+- `TTOpenInActivity` needs to be initalized with the current view and a) a CGRect (iPhone) or b) a UIBarButtonItem (iPad) from where it can present the UIDocumentInterActionController.
 
 ```objectivec
 NSURL *url = [NSURL fileURLWithPath:filePath];
 TTOpenInAppActivity *openInAppActivity = [[TTOpenInAppActivity alloc] initWithView:self.view andRect:[self.tableView rectForRowAtIndexPath:selectedIndexPath]];
 UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[URL] applicationActivities:@[openInAppActivity]];
-// Store superview (UIActionSheet) to allow dismissal
+// Store reference to superview (UIActionSheet) to allow dismissal
 openInAppActivity.superViewController = activityViewController;
 ```
 
