@@ -16,7 +16,7 @@ Add the `TTOpenInAppActivity` subfolder to your project. There are no required l
 ## Usage.
 
 - We need do keep an referemce to the superview (UIActionSheet). In this way we dismiss the UIActionSheet ans instead display the UIDocumentInterActionController.
-- `TTOpenInAppActivity` needs to be initalized with the current view and a) a CGRect (iPhone) or b) a UIBarButtonItem (iPad) from where it can present the UIDocumentInterActionController.
+- `TTOpenInAppActivity` needs to be initalized with the current view (iPhone & iPad) and a) a CGRect or b) a UIBarButtonItem (both only for iPad) from where it can present the UIDocumentInterActionController.
 
 ```objectivec
 NSURL *url = [NSURL fileURLWithPath:filePath];
