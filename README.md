@@ -19,7 +19,7 @@ Add the `TTOpenInAppActivity` subfolder to your project. There are no required l
 - `TTOpenInAppActivity` needs to be initalized with the current view (iPhone & iPad) and a) a CGRect or b) a UIBarButtonItem (both only for iPad) from where it can present the UIDocumentInterActionController.
 
 ```objectivec
-NSURL *url = [NSURL fileURLWithPath:filePath];
+NSURL *URL = [NSURL fileURLWithPath:filePath];
 TTOpenInAppActivity *openInAppActivity = [[TTOpenInAppActivity alloc] initWithView:self.view andRect:[self.tableView rectForRowAtIndexPath:selectedIndexPath]];
 UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[URL] applicationActivities:@[openInAppActivity]];
 // Store reference to superview (UIActionSheet) to allow dismissal
