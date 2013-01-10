@@ -46,7 +46,7 @@
     } else {
         // Create pop up
         self.activityPopoverController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
-        // Store reference to superview (UIActionSheet) to allow dismissal
+        // Store reference to superview (UIPopoverController) to allow dismissal
         openInAppActivity.superViewController = self.activityPopoverController;
         // Show UIActivityViewController in popup
         [self.activityPopoverController presentPopoverFromRect:((UIButton *)sender).frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];

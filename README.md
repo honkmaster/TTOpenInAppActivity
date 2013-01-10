@@ -17,13 +17,27 @@ Add the `TTOpenInAppActivity` subfolder to your project. There are no required l
 
 - We need do keep an referemce to the superview (UIActionSheet). In this way we dismiss the UIActionSheet ans instead display the UIDocumentInterActionController.
 - `TTOpenInAppActivity` needs to be initalized with the current view (iPhone & iPad) and a) a CGRect or b) a UIBarButtonItem (both only for iPad) from where it can present the UIDocumentInterActionController.
+- See example project.
 
 ```objectivec
-NSURL *URL = [NSURL fileURLWithPath:filePath];
-TTOpenInAppActivity *openInAppActivity = [[TTOpenInAppActivity alloc] initWithView:self.view andRect:[self.tableView rectForRowAtIndexPath:selectedIndexPath]];
+NSURL *URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"empty" ofType:@"pdf"]];
+TTOpenInAppActivity *openInAppActivity = [[TTOpenInAppActivity alloc] initWithView:self.view andRect:((UIButton *)sender).frame];
 UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[URL] applicationActivities:@[openInAppActivity]];
-// Store reference to superview (UIActionSheet) to allow dismissal
-openInAppActivity.superViewController = activityViewController;
+    
+if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    // Store reference to superview (UIActionSheet) to allow dismissal
+    openInAppActivity.superViewController = activityViewController;
+    // Show UIActivityViewController 
+    [self presentViewController:activityViewController animated:YES completion:NULL];
+} else {
+    // Create pop up
+    self.activityPopoverController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
+    // Store reference to superview (UIPopoverController) to allow dismissal
+    openInAppActivity.superViewController = self.activityPopoverController;
+    // Show UIActivityViewController in popup
+    [self.activityPopoverController presentPopoverFromRect:((UIButton *)sender).frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
 ```
 ## License
 
