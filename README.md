@@ -11,7 +11,7 @@
 
 ## Installation
 
-Add the `TTOpenInAppActivity` subfolder to your project. There are no required libraries other than `UIKit`.
+Add the `TTOpenInAppActivity` subfolder to your project. There are no required libraries other than `UIKit` and `MobileCoreServices`.
 
 ## Usage.
 
