@@ -4,6 +4,11 @@
 
 ![TTOpenInActivity screenshot](http://i49.tinypic.com/1pf29t.png "TTOpenInActivity screenshot")
 
+## Used In
+
+- [PenUltimate by Evernote](https://itunes.apple.com/app/penultimate/id354098826?mt=8)
+- Please tell me if you use TTOpenInAppActivity in your App (just submit it as an [issue](https://github.com/honkmaster/TTOpenInAppActivity/issues))! 
+
 ## Requirements
 
 - As `UIActivity` is iOS 6 only, so is the subclass.
