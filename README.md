@@ -7,6 +7,7 @@
 ## Used In
 
 - [PenUltimate by Evernote](https://itunes.apple.com/app/penultimate/id354098826?mt=8)
+- Bugshot by Marco Arment
 - Please tell me if you use TTOpenInAppActivity in your App (just submit it as an [issue](https://github.com/honkmaster/TTOpenInAppActivity/issues))! 
 
 ## Requirements
