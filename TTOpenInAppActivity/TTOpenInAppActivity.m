@@ -60,7 +60,10 @@
 
 - (UIImage *)activityImage
 {
-	return [UIImage imageNamed:@"TTOpenInAppActivity"];
+	if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+        return [UIImage imageNamed:@"TTOpenInAppActivity7"];
+    else
+        return [UIImage imageNamed:@"TTOpenInAppActivity"];
 }
 
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems

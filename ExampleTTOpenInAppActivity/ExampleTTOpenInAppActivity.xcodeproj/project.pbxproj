@@ -22,10 +22,10 @@
 		3C4D0432169EAEEE00888955 /* TTOpenInAppActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D042D169EAEEE00888955 /* TTOpenInAppActivity.m */; };
 		3C4D0433169EAEEE00888955 /* TTOpenInAppActivity.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D042E169EAEEE00888955 /* TTOpenInAppActivity.png */; };
 		3C4D0434169EAEEE00888955 /* TTOpenInAppActivity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D042F169EAEEE00888955 /* TTOpenInAppActivity@2x.png */; };
-		3C4D0435169EAEEE00888955 /* TTOpenInAppActivity@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D0430169EAEEE00888955 /* TTOpenInAppActivity@2x~ipad.png */; };
-		3C4D0436169EAEEE00888955 /* TTOpenInAppActivity~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D0431169EAEEE00888955 /* TTOpenInAppActivity~ipad.png */; };
 		3C4D0438169EAFAF00888955 /* empty.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D0437169EAFAF00888955 /* empty.pdf */; };
 		3C4D043C169EB09900888955 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4D043B169EB09900888955 /* MobileCoreServices.framework */; };
+		3CEE8BFE17B30CCD0034D9F4 /* TTOpenInAppActivity7.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEE8BFC17B30CCD0034D9F4 /* TTOpenInAppActivity7.png */; };
+		3CEE8BFF17B30CCD0034D9F4 /* TTOpenInAppActivity7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEE8BFD17B30CCD0034D9F4 /* TTOpenInAppActivity7@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,10 +50,10 @@
 		3C4D042D169EAEEE00888955 /* TTOpenInAppActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTOpenInAppActivity.m; sourceTree = "<group>"; };
 		3C4D042E169EAEEE00888955 /* TTOpenInAppActivity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TTOpenInAppActivity.png; sourceTree = "<group>"; };
 		3C4D042F169EAEEE00888955 /* TTOpenInAppActivity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TTOpenInAppActivity@2x.png"; sourceTree = "<group>"; };
-		3C4D0430169EAEEE00888955 /* TTOpenInAppActivity@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TTOpenInAppActivity@2x~ipad.png"; sourceTree = "<group>"; };
-		3C4D0431169EAEEE00888955 /* TTOpenInAppActivity~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TTOpenInAppActivity~ipad.png"; sourceTree = "<group>"; };
 		3C4D0437169EAFAF00888955 /* empty.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = empty.pdf; sourceTree = SOURCE_ROOT; };
 		3C4D043B169EB09900888955 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3CEE8BFC17B30CCD0034D9F4 /* TTOpenInAppActivity7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TTOpenInAppActivity7.png; sourceTree = "<group>"; };
+		3CEE8BFD17B30CCD0034D9F4 /* TTOpenInAppActivity7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TTOpenInAppActivity7@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +136,8 @@
 				3C4D042D169EAEEE00888955 /* TTOpenInAppActivity.m */,
 				3C4D042E169EAEEE00888955 /* TTOpenInAppActivity.png */,
 				3C4D042F169EAEEE00888955 /* TTOpenInAppActivity@2x.png */,
-				3C4D0430169EAEEE00888955 /* TTOpenInAppActivity@2x~ipad.png */,
-				3C4D0431169EAEEE00888955 /* TTOpenInAppActivity~ipad.png */,
+				3CEE8BFC17B30CCD0034D9F4 /* TTOpenInAppActivity7.png */,
+				3CEE8BFD17B30CCD0034D9F4 /* TTOpenInAppActivity7@2x.png */,
 			);
 			name = TTOpenInAppActivity;
 			path = ../../TTOpenInAppActivity;
@@ -199,11 +199,11 @@
 				3C4D040E169EAE4A00888955 /* Default@2x.png in Resources */,
 				3C4D0410169EAE4A00888955 /* Default-568h@2x.png in Resources */,
 				3C4D0413169EAE4A00888955 /* MainStoryboard_iPhone.storyboard in Resources */,
+				3CEE8BFE17B30CCD0034D9F4 /* TTOpenInAppActivity7.png in Resources */,
 				3C4D0416169EAE4A00888955 /* MainStoryboard_iPad.storyboard in Resources */,
 				3C4D0433169EAEEE00888955 /* TTOpenInAppActivity.png in Resources */,
 				3C4D0434169EAEEE00888955 /* TTOpenInAppActivity@2x.png in Resources */,
-				3C4D0435169EAEEE00888955 /* TTOpenInAppActivity@2x~ipad.png in Resources */,
-				3C4D0436169EAEEE00888955 /* TTOpenInAppActivity~ipad.png in Resources */,
+				3CEE8BFF17B30CCD0034D9F4 /* TTOpenInAppActivity7@2x.png in Resources */,
 				3C4D0438169EAFAF00888955 /* empty.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
