@@ -2,7 +2,7 @@
 
 `TTOpenInAppActivity` is a `UIActivity` subclass that provides an "Open In ..." action to a `UIActivityViewController`. `TTOpenInAppActivity` uses an UIDocumentInteractionController to present all Apps than can handle the document specified with a file URL.
 
-![TTOpenInActivity screenshot](http://i49.tinypic.com/1pf29t.png "TTOpenInActivity screenshot")
+<img src=http://i40.tinypic.com/xn887b.png width="320px" />
 
 ## Used In
 
