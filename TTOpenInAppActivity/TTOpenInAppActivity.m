@@ -121,7 +121,7 @@
     self.docController = [UIDocumentInteractionController interactionControllerWithURL:self.fileURL];
     self.docController.delegate = self;
     self.docController.UTI = [self UTIForURL:self.fileURL];
-    BOOL sucess;
+    BOOL sucess; // Sucess is true if it was possible to open the controller and there are apps available
     
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
         sucess = [self.docController presentOpenInMenuFromRect:CGRectZero inView:self.superView animated:YES];
@@ -145,6 +145,11 @@
                                               cancelButtonTitle:NSLocalizedString(@"OK", @"OK")
                                               otherButtonTitles:nil];
         [alert show];
+        
+        // Inform app that the activity has finished
+        // Return NO because the service was canceled and did not finish because of an error.
+        // http://developer.apple.com/library/ios/#documentation/uikit/reference/UIActivity_Class/Reference/Reference.html
+        [self activityDidFinish:NO];
     }
 }
 
@@ -152,6 +157,7 @@
 
 - (void) documentInteractionControllerDidDismissOpenInMenu: (UIDocumentInteractionController *) controller
 {
+    // Inform app that the activity has finished
     [self activityDidFinish:YES];
 }
 
