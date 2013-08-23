@@ -109,7 +109,7 @@
 - (NSString *)UTIForURL:(NSURL *)url
 {
     CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge CFStringRef)url.pathExtension, NULL);
-    return (__bridge NSString *)UTI;
+    return (NSString *)CFBridgingRelease(UTI) ;
 }
 
 - (void)openDocumentInteractionController
