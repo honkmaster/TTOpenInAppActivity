@@ -68,13 +68,15 @@
 
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems
 {
-	for (id activityItem in activityItems) {
+    NSUInteger count = 0;
+    
+    for (id activityItem in activityItems) {
 		if ([activityItem isKindOfClass:[NSURL class]]) {
-			return YES;
+			count++;
 		}
 	}
 	
-	return NO;
+	return (count == 1);
 }
 
 - (void)prepareWithActivityItems:(NSArray *)activityItems
