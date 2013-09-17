@@ -71,7 +71,7 @@
     NSUInteger count = 0;
     
     for (id activityItem in activityItems) {
-		if ([activityItem isKindOfClass:[NSURL class]]) {
+		if ([activityItem isKindOfClass:[NSURL class]] && [(NSURL *)activityItem isFileURL]) {
 			count++;
 		}
 	}
@@ -82,7 +82,7 @@
 - (void)prepareWithActivityItems:(NSArray *)activityItems
 {
 	for (id activityItem in activityItems) {
-		if ([activityItem isKindOfClass:[NSURL class]]) {
+		if ([activityItem isKindOfClass:[NSURL class]] && [(NSURL *)activityItem isFileURL]) {
 			self.fileURL = activityItem;
 		}
 	}
