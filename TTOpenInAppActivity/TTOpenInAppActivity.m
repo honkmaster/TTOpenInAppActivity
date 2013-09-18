@@ -12,16 +12,17 @@
 #import <MobileCoreServices/MobileCoreServices.h> // For UTI
 
 @interface TTOpenInAppActivity ()
-    // Private attributes
-    @property (nonatomic, strong) NSURL *fileURL;
-    @property (atomic) CGRect rect;
-    @property (nonatomic, strong) UIBarButtonItem *barButtonItem;
-    @property (nonatomic, strong) UIView *superView;
-    @property (nonatomic, strong) UIDocumentInteractionController *docController;
 
-    // Private methods
-    - (NSString *)UTIForURL:(NSURL *)url;
-    - (void)openDocumentInteractionController;
+// Private attributes
+@property (nonatomic, strong) NSURL *fileURL;
+@property (atomic) CGRect rect;
+@property (nonatomic, strong) UIBarButtonItem *barButtonItem;
+@property (nonatomic, strong) UIView *superView;
+@property (nonatomic, strong) UIDocumentInteractionController *docController;
+
+// Private methods
+- (NSString *)UTIForURL:(NSURL *)url;
+- (void)openDocumentInteractionController;
 
 @end
 
@@ -155,10 +156,31 @@
     }
 }
 
+- (void)dismissDocumentInteractionControllerAnimated:(BOOL)animated {
+    // Hide menu
+    [self.docController dismissMenuAnimated:animated];
+    
+    // Inform app that the activity has finished
+    [self activityDidFinish:NO];
+}
+
 #pragma mark - UIDocumentInteractionControllerDelegate
+
+- (void) documentInteractionControllerWillPresentOpenInMenu:(UIDocumentInteractionController *)controller
+{
+    // iÍnform delegate
+    if([self.delegate respondsToSelector:@selector(openInAppActivityWillPresentDocumentInteractionController:)]) {
+        [self.delegate openInAppActivityWillPresentDocumentInteractionController:self];
+    }
+}
 
 - (void) documentInteractionControllerDidDismissOpenInMenu: (UIDocumentInteractionController *) controller
 {
+    // Inform delegate
+    if([self.delegate respondsToSelector:@selector(openInAppActivityDidDismissDocumentInteractionController:)]) {
+        [self.delegate openInAppActivityDidDismissDocumentInteractionController:self];
+    }
+    
     // Inform app that the activity has finished
     [self activityDidFinish:YES];
 }
