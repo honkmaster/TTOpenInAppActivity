@@ -10,6 +10,8 @@
 - [Bugshot by Marco Arment](https://itunes.apple.com/de/app/bugshot/id669858907?mt=8)
 - [WriteDown - a Markdown text editor with syncing support by Nguyen Vinh](https://itunes.apple.com/app/id670733152)
 - [Trail Maker](https://itunes.apple.com/de/app/trail-maker/id651198801?l=en&mt=8)
+- [Syncspace by The Infinite Kind](http://infinitekind.com/syncspace)
+- [SketchTo by The Infinite Kind](http://infinitekind.com/sketchto)
 - Please tell me if you use TTOpenInAppActivity in your App (just submit it as an [issue](https://github.com/honkmaster/TTOpenInAppActivity/issues))! 
 
 ## Requirements
