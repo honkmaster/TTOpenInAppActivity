@@ -12,6 +12,7 @@
 - [Trail Maker](https://itunes.apple.com/de/app/trail-maker/id651198801?l=en&mt=8)
 - [Syncspace by The Infinite Kind](http://infinitekind.com/syncspace)
 - [SketchTo by The Infinite Kind](http://infinitekind.com/sketchto)
+- [Calex by Martin Stemmle](https://itunes.apple.com/de/app/calex/id615068482?mt=8)
 - Please tell me if you use TTOpenInAppActivity in your App (just submit it as an [issue](https://github.com/honkmaster/TTOpenInAppActivity/issues))! 
 
 ## Requirements
