@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'TTOpenInAppActivity'
   s.version      = '1.0'
-  s.license      = 'MIT'
+  s.license      = { :type => 'MIT', :file => 'README.md' }
   s.summary      = 'TTOpenInAppActivity is a UIActivity subclass that provides an "Open In ..." action to a UIActivityViewController.'
   s.description  = <<-DESC
                         TTOpenInAppActivity is a UIActivity subclass that provides an "Open In ..." action to a UIActivityViewController.
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
                     DESC
   s.homepage     = 'https://github.com/honkmaster/TTOpenInAppActivity'
   s.authors      = { 'Tobias Tiemerding' => 'http://www.tiemerding.com' }
-  s.source       = { :git => 'https://github.com/tomco/TTOpenInAppActivity.git', :commit => '65b8fb0cbafe92073a883f8706b0d725fcd58d01' }
+  s.source       = { :git => 'https://github.com/honkmaster/TTOpenInAppActivity.git', :tag => '1.0' }
   s.source_files = 'TTOpenInAppActivity/*.{h,m}'
   s.resources    = 'TTOpenInAppActivity/*.png'
   s.frameworks   = 'UIKit', 'MobileCoreServices'
