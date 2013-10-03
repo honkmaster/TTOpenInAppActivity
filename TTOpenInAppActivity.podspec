@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'TTOpenInAppActivity'
   s.version      = '1.0'
-  s.license      = { :type => 'MIT', :file => 'README.md' }
+  s.license      = 'MIT'
   s.summary      = 'TTOpenInAppActivity is a UIActivity subclass that provides an "Open In ..." action to a UIActivityViewController.'
   s.description  = <<-DESC
                         TTOpenInAppActivity is a UIActivity subclass that provides an "Open In ..." action to a UIActivityViewController.
