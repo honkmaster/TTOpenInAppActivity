@@ -51,6 +51,11 @@ if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
 }
 
 ```
+
+## Contributer (Thank You!)
+
+- [Vincent Tourraine](https://github.com/vtourraine) 
+
 ## License
 
 Copyright (c) 2012-2013 Tobias Tiemerding
