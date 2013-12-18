@@ -14,6 +14,8 @@
 - [Syncspace by The Infinite Kind](http://infinitekind.com/syncspace)
 - [SketchTo by The Infinite Kind](http://infinitekind.com/sketchto)
 - [Calex by Martin Stemmle](http://calexapp.com)
+- [Lyynifier by Lyyn](http://www.lyyn.com/lyynifier)
+- [KyBook by Kolyvan](http://kolyvan.com/kybook/index.html)
 - Please tell me if you use TTOpenInAppActivity in your App (just submit it as an [issue](https://github.com/honkmaster/TTOpenInAppActivity/issues))! 
 
 ## Requirements
