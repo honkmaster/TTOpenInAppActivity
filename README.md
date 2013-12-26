@@ -16,6 +16,7 @@
 - [Calex by Martin Stemmle](http://calexapp.com)
 - [Lyynifier by Lyyn](http://www.lyyn.com/lyynifier)
 - [KyBook by Kolyvan](http://kolyvan.com/kybook/index.html)
+- [Photo OCR](https://itunes.apple.com/app/photo-ocr/id640974771?mt=8)
 - Please tell me if you use TTOpenInAppActivity in your App (just submit it as an [issue](https://github.com/honkmaster/TTOpenInAppActivity/issues))! 
 
 ## Requirements
@@ -60,7 +61,7 @@ if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
 
 ## License
 
-Copyright (c) 2012-2013 Tobias Tiemerding
+Copyright (c) 2012-2014 Tobias Tiemerding
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
