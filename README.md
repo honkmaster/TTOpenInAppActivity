@@ -14,6 +14,7 @@
 - [Syncspace by The Infinite Kind](http://infinitekind.com/syncspace)
 - [SketchTo by The Infinite Kind](http://infinitekind.com/sketchto)
 - [Calex by Martin Stemmle](http://calexapp.com)
+- [deGeo by MobileInfoCenter](http://mobileinfocenter.com/degeo/)
 - [Lyynifier by Lyyn](http://www.lyyn.com/lyynifier)
 - [KyBook by Kolyvan](http://kolyvan.com/kybook/index.html)
 - [Photo OCR](https://itunes.apple.com/app/photo-ocr/id640974771?mt=8)
