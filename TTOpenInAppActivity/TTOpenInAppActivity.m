@@ -101,21 +101,7 @@
         return;
     }
 
-    // Dismiss activity view
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-        // iPhone dismiss UIActivityViewController
-        [self.superViewController dismissViewControllerAnimated:YES completion:^(void){
-            if (self.fileURLs.count > 1) {
-                [self openSelectFileActionSheet];
-            }
-            else {
-                // Open UIDocumentInteractionController
-                [self openDocumentInteractionControllerWithFileURL:self.fileURLs.lastObject];
-            }
-        }];
-    } else {
-        [self.superViewController dismissPopoverAnimated:YES];
-        [((UIPopoverController *)self.superViewController).delegate popoverControllerDidDismissPopover:self.superViewController];
+    void(^presentOpenIn)(void) = ^{
         if (self.fileURLs.count > 1) {
             [self openSelectFileActionSheet];
         }
@@ -123,6 +109,18 @@
             // Open UIDocumentInteractionController
             [self openDocumentInteractionControllerWithFileURL:self.fileURLs.lastObject];
         }
+    };
+
+    //  Check to see if it's presented via popover
+    if ([self.superViewController respondsToSelector:@selector(dismissPopoverAnimated:)]) {
+        [self.superViewController dismissPopoverAnimated:YES];
+        [((UIPopoverController *)self.superViewController).delegate popoverControllerDidDismissPopover:self.superViewController];
+        
+        presentOpenIn();
+    } else {    //  Not in popover, dismiss as if iPhone
+        [self.superViewController dismissViewControllerAnimated:YES completion:^(void){
+            presentOpenIn();
+        }];
     }
 }
 
