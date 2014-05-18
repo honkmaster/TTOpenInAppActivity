@@ -18,6 +18,7 @@
 - [Lyynifier by Lyyn](http://www.lyyn.com/lyynifier)
 - [KyBook by Kolyvan](http://kolyvan.com/kybook/index.html)
 - [Photo OCR](https://itunes.apple.com/app/photo-ocr/id640974771?mt=8)
+- [My Wonderful Days](http://itunes.apple.com/app/id434356065?mt=8)
 - Please tell me if you use TTOpenInAppActivity in your App (just submit it as an [issue](https://github.com/honkmaster/TTOpenInAppActivity/issues))! 
 
 ## Requirements
