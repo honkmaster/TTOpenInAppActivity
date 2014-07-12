@@ -32,6 +32,21 @@
 @synthesize superView = _superView;
 @synthesize superViewController = _superViewController;
 
++ (NSBundle *)bundle
+{
+    NSBundle *bundle;
+    NSURL *openInAppActivityBundleURL = [[NSBundle mainBundle] URLForResource:@"TTOpenInAppActivity" withExtension:@"bundle"];
+
+    if (openInAppActivityBundleURL) {
+        // TTOpenInAppActivity.bundle will likely only exist when used via CocoaPods
+        bundle = [NSBundle bundleWithURL:openInAppActivityBundleURL];
+    } else {
+        bundle = [NSBundle mainBundle];
+    }
+
+    return bundle;
+}
+
 - (id)initWithView:(UIView *)view andRect:(CGRect)rect
 {
     if(self =[super init]){
@@ -57,7 +72,7 @@
 
 - (NSString *)activityTitle
 {
-	return NSLocalizedString(@"Open in ...", @"Open in ...");
+    return NSLocalizedStringFromTableInBundle(@"Open in ...", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil);
 }
 
 - (UIImage *)activityImage
@@ -151,14 +166,13 @@
     if(!sucess){
         // There is no app to handle this file
         NSString *deviceType = [UIDevice currentDevice].localizedModel;
-        NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Your %@ doesn't seem to have any other Apps installed that can open this document.",
-                                                                         @"Your %@ doesn't seem to have any other Apps installed that can open this document."), deviceType];
-        
+        NSString *message = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Your %@ doesn't seem to have any other Apps installed that can open this document.", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil), deviceType];
+
         // Display alert
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No suitable Apps installed", @"No suitable App installed")
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTableInBundle(@"No suitable App installed", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil)
                                                         message:message
                                                        delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"OK", @"OK")
+                                              cancelButtonTitle:NSLocalizedStringFromTableInBundle(@"OK", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil)
                                               otherButtonTitles:nil];
         [alert show];
         
@@ -179,7 +193,7 @@
 
 - (void)openSelectFileActionSheet
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Select a file", @"Select a file")
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedStringFromTableInBundle(@"Select a file", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil)
                                                              delegate:self
                                                     cancelButtonTitle:nil
                                                destructiveButtonTitle:nil
@@ -189,8 +203,8 @@
         [actionSheet addButtonWithTitle:[fileURL lastPathComponent]];
     }
     
-    actionSheet.cancelButtonIndex = [actionSheet addButtonWithTitle:NSLocalizedString(@"Cancel", @"Cancel")];
-    
+    actionSheet.cancelButtonIndex = [actionSheet addButtonWithTitle:NSLocalizedStringFromTableInBundle(@"Cancel", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil)];
+
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
         [actionSheet showFromRect:CGRectZero inView:self.superView animated:YES];
     } else {
