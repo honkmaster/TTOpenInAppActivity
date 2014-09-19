@@ -10,6 +10,7 @@
 
 #import "TTOpenInAppActivity.h"
 #import <MobileCoreServices/MobileCoreServices.h> // For UTI
+#import <ImageIO/ImageIO.h>
 
 @interface TTOpenInAppActivity () <UIActionSheetDelegate>
 
@@ -91,6 +92,9 @@
 		if ([activityItem isKindOfClass:[NSURL class]] && [(NSURL *)activityItem isFileURL]) {
 			count++;
 		}
+        if ([activityItem isKindOfClass:[UIImage class]]) {
+            count++;
+        }
 	}
 	
 	return (count >= 1);
@@ -104,6 +108,10 @@
 		if ([activityItem isKindOfClass:[NSURL class]] && [(NSURL *)activityItem isFileURL]) {
             [fileURLs addObject:activityItem];
 		}
+        if ([activityItem isKindOfClass:[UIImage class]]) {
+            NSURL *imageURL = [self localFileURLForImage:activityItem];
+            [fileURLs addObject:imageURL];
+        }
 	}
     
     self.fileURLs = [fileURLs copy];
@@ -248,6 +256,47 @@
 	    // Inform app that the activity has finished
 	    [self activityDidFinish:NO];
     }
+}
+
+#pragma mark - Image conversion
+
+- (NSURL *)localFileURLForImage:(UIImage *)image
+{
+    // save this image to a temp folder
+    NSURL *tmpDirURL = [NSURL fileURLWithPath:NSTemporaryDirectory() isDirectory:YES];
+    NSString *filename = [[NSUUID UUID] UUIDString];
+    NSURL *fileURL;
+    // if there is an images array, this is an animated image.
+    if (image.images) {
+        fileURL = [[tmpDirURL URLByAppendingPathComponent:filename] URLByAppendingPathExtension:@"gif"];
+        NSInteger frameCount = image.images.count;
+        CGFloat frameDuration = image.duration / frameCount;
+        NSDictionary *fileProperties = @{
+                                         (__bridge id)kCGImagePropertyGIFDictionary: @{
+                                                 (__bridge id)kCGImagePropertyGIFLoopCount: @0, // 0 means loop forever
+                                                 }
+                                         };
+        NSDictionary *frameProperties = @{
+                                          (__bridge id)kCGImagePropertyGIFDictionary: @{
+                                                  (__bridge id)kCGImagePropertyGIFDelayTime: [NSNumber numberWithFloat:frameDuration],
+                                                  }
+                                          };
+        CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)fileURL, kUTTypeGIF, frameCount, NULL);
+        CGImageDestinationSetProperties(destination, (__bridge CFDictionaryRef)fileProperties);
+        for (NSUInteger i = 0; i < frameCount; i++) {
+            @autoreleasepool {
+                UIImage *frameImage = [image.images objectAtIndex:i];
+                CGImageDestinationAddImage(destination, frameImage.CGImage, (__bridge CFDictionaryRef)frameProperties);
+            }
+        }
+        NSAssert(CGImageDestinationFinalize(destination),@"Failed to create animated image.");
+        CFRelease(destination);
+    } else {
+        fileURL = [[tmpDirURL URLByAppendingPathComponent:filename] URLByAppendingPathExtension:@"jpg"];
+        NSData *data = [NSData dataWithData:UIImageJPEGRepresentation(image, 0.8)];
+        [[NSFileManager defaultManager] createFileAtPath:[fileURL path] contents:data attributes:nil];
+    }
+    return fileURL;
 }
 
 @end
