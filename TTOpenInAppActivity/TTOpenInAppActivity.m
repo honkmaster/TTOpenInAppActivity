@@ -132,7 +132,7 @@
         [((UIPopoverController *)self.superViewController).delegate popoverControllerDidDismissPopover:self.superViewController];
         
         presentOpenIn();
-    } else if([self.superViewController presentedViewController]) {    //  Not in popover, dismiss as if iPhone
+    } else if([self.superViewController presentingViewController]) {    //  Not in popover, dismiss as if iPhone
         [self.superViewController dismissViewControllerAnimated:YES completion:^(void){
             presentOpenIn();
         }];
