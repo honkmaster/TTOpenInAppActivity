@@ -77,10 +77,13 @@
 
 - (UIImage *)activityImage
 {
-	if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0){
+        return [UIImage imageNamed:@"TTOpenInAppActivity8"];
+    } else if([[[UIDevice currentDevice] systemVersion] floatValue] == 7.0){
         return [UIImage imageNamed:@"TTOpenInAppActivity7"];
-    else
+    } else {
         return [UIImage imageNamed:@"TTOpenInAppActivity"];
+    }
 }
 
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems
@@ -159,10 +162,11 @@
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
         sucess = [self.docController presentOpenInMenuFromRect:CGRectZero inView:self.superView animated:YES];
     } else {
-        if(self.barButtonItem)
+        if(self.barButtonItem){
             sucess = [self.docController presentOpenInMenuFromBarButtonItem:self.barButtonItem animated:YES];
-        else
+        } else {
             sucess = [self.docController presentOpenInMenuFromRect:self.rect inView:self.superView animated:YES];
+        }
     }
     
     if(!sucess){
@@ -210,10 +214,11 @@
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
         [actionSheet showFromRect:CGRectZero inView:self.superView animated:YES];
     } else {
-        if(self.barButtonItem)
+        if(self.barButtonItem){
             [actionSheet showFromBarButtonItem:self.barButtonItem animated:YES];
-        else
+        } else {
             [actionSheet showFromRect:self.rect inView:self.superView animated:YES];
+        }
     }
 }
 
