@@ -79,7 +79,7 @@
 {
     if([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0){
         return [UIImage imageNamed:@"TTOpenInAppActivity8"];
-    } else if([[[UIDevice currentDevice] systemVersion] floatValue] == 7.0){
+    } else if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0){
         return [UIImage imageNamed:@"TTOpenInAppActivity7"];
     } else {
         return [UIImage imageNamed:@"TTOpenInAppActivity"];
