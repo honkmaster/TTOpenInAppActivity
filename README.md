@@ -61,6 +61,7 @@ if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
 ## Contributer (Thank You!)
 
 - [Vincent Tourraine](https://github.com/vtourraine) 
+- [Jesse Ditson](https://github.com/jesseditson)
 
 ## License
 
