@@ -29,7 +29,7 @@
 
 ## Installation
 
-Add the `TTOpenInAppActivity` subfolder to your project. There are no required libraries other than `UIKit` and `MobileCoreServices`.
+Add the `TTOpenInAppActivity` subfolder to your project. Required libraries: `UIKit`, `CoreGraphics`, `ImageIO` and `MobileCoreServices`.
 
 ## Usage.
 
