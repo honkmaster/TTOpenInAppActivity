@@ -234,7 +234,7 @@
 
 - (void) documentInteractionControllerWillPresentOpenInMenu:(UIDocumentInteractionController *)controller
 {
-    // iÍnform delegate
+    // Inform delegate
     if([self.delegate respondsToSelector:@selector(openInAppActivityWillPresentDocumentInteractionController:)]) {
         [self.delegate openInAppActivityWillPresentDocumentInteractionController:self];
     }
@@ -246,7 +246,10 @@
     if([self.delegate respondsToSelector:@selector(openInAppActivityDidDismissDocumentInteractionController:)]) {
         [self.delegate openInAppActivityDidDismissDocumentInteractionController:self];
     }
-    
+}
+
+- (void) documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(NSString *)application
+{
     // Inform app that the activity has finished
     [self activityDidFinish:YES];
 }
