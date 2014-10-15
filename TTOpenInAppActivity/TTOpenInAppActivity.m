@@ -250,6 +250,11 @@
 
 - (void) documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(NSString *)application
 {
+    // Inform delegate
+    if([self.delegate respondsToSelector:@selector(openInAppActivityDidEndSendingToApplication:)]) {
+        [self.delegate openInAppActivityDidDismissDocumentInteractionController:self];
+    }
+    
     // Inform app that the activity has finished
     [self activityDidFinish:YES];
 }
