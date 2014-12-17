@@ -254,6 +254,9 @@
     if([self.delegate respondsToSelector:@selector(openInAppActivityDidEndSendingToApplication:)]) {
         [self.delegate openInAppActivityDidDismissDocumentInteractionController:self];
     }
+    if ([self.delegate respondsToSelector:@selector(openInAppActivityDidSendToApplication:)]) {
+        [self.delegate openInAppActivityDidSendToApplication:application];
+    }
     
     // Inform app that the activity has finished
     [self activityDidFinish:YES];
