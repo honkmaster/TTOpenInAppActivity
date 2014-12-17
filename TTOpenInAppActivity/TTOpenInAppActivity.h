@@ -17,6 +17,7 @@
 - (void)openInAppActivityWillPresentDocumentInteractionController:(TTOpenInAppActivity*)activity;
 - (void)openInAppActivityDidDismissDocumentInteractionController:(TTOpenInAppActivity*)activity;
 - (void)openInAppActivityDidEndSendingToApplication:(TTOpenInAppActivity*)activity;
+- (void)openInAppActivityDidSendToApplication:(NSString*)application;
 @end
 
 @interface TTOpenInAppActivity : UIActivity <UIDocumentInteractionControllerDelegate>
