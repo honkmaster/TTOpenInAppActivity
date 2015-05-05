@@ -252,7 +252,7 @@
 {
     // Inform delegate
     if([self.delegate respondsToSelector:@selector(openInAppActivityDidEndSendingToApplication:)]) {
-        [self.delegate openInAppActivityDidDismissDocumentInteractionController:self];
+        [self.delegate openInAppActivityDidEndSendingToApplication:self];
     }
     if ([self.delegate respondsToSelector:@selector(openInAppActivityDidSendToApplication:)]) {
         [self.delegate openInAppActivityDidSendToApplication:application];
