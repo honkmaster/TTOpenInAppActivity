@@ -8,7 +8,7 @@
 
 - [Stud.IP Mobile by Tobias Tiemerding](http://www.studip-mobile.de)
 - [PenUltimate by Evernote](https://itunes.apple.com/app/penultimate/id354098826?mt=8)
-- [Bugshot by Marco Arment](https://itunes.apple.com/de/app/bugshot/id669858907?mt=8)
+- [Pinpoint by Lickability (previously Bugshot by Marco Arment)](https://itunes.apple.com/de/app/bugshot/id669858907?mt=8)
 - [WriteDown - a Markdown text editor with syncing support by Nguyen Vinh](https://itunes.apple.com/app/id670733152)
 - [Trail Maker](https://itunes.apple.com/de/app/trail-maker/id651198801?l=en&mt=8)
 - [Syncspace by The Infinite Kind](http://infinitekind.com/syncspace)
