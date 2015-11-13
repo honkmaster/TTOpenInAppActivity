@@ -315,5 +315,10 @@
     return fileURL;
 }
 
+- (void)dealloc
+{
+    self.docController.delegate = nil;
+}
+
 @end
 
