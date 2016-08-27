@@ -267,7 +267,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex != actionSheet.cancelButtonIndex) {
-        [self openDocumentInteractionControllerWithFileURL:self.fileURLs[buttonIndex]];
+        [self openDocumentInteractionControllerWithFileURL:self.fileURLs[(NSUInteger)buttonIndex]];
     } else {
 	    // Inform app that the activity has finished
 	    [self activityDidFinish:NO];
@@ -285,8 +285,8 @@
     // if there is an images array, this is an animated image.
     if (image.images) {
         fileURL = [[tmpDirURL URLByAppendingPathComponent:filename] URLByAppendingPathExtension:@"gif"];
-        NSInteger frameCount = image.images.count;
-        CGFloat frameDuration = image.duration / frameCount;
+        NSUInteger frameCount = image.images.count;
+        CGFloat frameDuration = (CGFloat)image.duration / frameCount;
         NSDictionary *fileProperties = @{
                                          (__bridge id)kCGImagePropertyGIFDictionary: @{
                                                  (__bridge id)kCGImagePropertyGIFLoopCount: @0, // 0 means loop forever
@@ -294,10 +294,10 @@
                                          };
         NSDictionary *frameProperties = @{
                                           (__bridge id)kCGImagePropertyGIFDictionary: @{
-                                                  (__bridge id)kCGImagePropertyGIFDelayTime: [NSNumber numberWithFloat:frameDuration],
+                                                  (__bridge id)kCGImagePropertyGIFDelayTime: [NSNumber numberWithDouble:frameDuration],
                                                   }
                                           };
-        CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)fileURL, kUTTypeGIF, frameCount, NULL);
+        CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)fileURL, kUTTypeGIF, (size_t)frameCount, NULL);
         CGImageDestinationSetProperties(destination, (__bridge CFDictionaryRef)fileProperties);
         for (NSUInteger i = 0; i < frameCount; i++) {
             @autoreleasepool {
@@ -309,7 +309,7 @@
         CFRelease(destination);
     } else {
         fileURL = [[tmpDirURL URLByAppendingPathComponent:filename] URLByAppendingPathExtension:@"jpg"];
-        NSData *data = [NSData dataWithData:UIImageJPEGRepresentation(image, 0.8)];
+        NSData *data = [NSData dataWithData:UIImageJPEGRepresentation(image, (CGFloat)0.8)];
         [[NSFileManager defaultManager] createFileAtPath:[fileURL path] contents:data attributes:nil];
     }
     return fileURL;
