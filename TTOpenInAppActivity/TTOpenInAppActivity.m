@@ -183,12 +183,22 @@
         NSString *message = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Your %@ doesn't seem to have any other Apps installed that can open this document.", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil), deviceType];
 
         // Display alert
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTableInBundle(@"No suitable App installed", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil)
-                                                        message:message
-                                                       delegate:nil
-                                              cancelButtonTitle:NSLocalizedStringFromTableInBundle(@"OK", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil)
-                                              otherButtonTitles:nil];
-        [alert show];
+        // #available(iOS 9.0, *)
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0){
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"No suitable App installed", nil)
+                                                                           message:message
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {}];
+            [alert addAction:cancelAction];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTableInBundle(@"No suitable App installed", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil)
+                                                            message:message
+                                                           delegate:nil
+                                                  cancelButtonTitle:NSLocalizedStringFromTableInBundle(@"OK", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil)
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
         
         // Inform app that the activity has finished
         // Return NO because the service was canceled and did not finish because of an error.
