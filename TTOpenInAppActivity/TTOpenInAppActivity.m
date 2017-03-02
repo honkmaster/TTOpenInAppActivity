@@ -20,6 +20,7 @@
 @property (nonatomic, strong) UIBarButtonItem *barButtonItem;
 @property (nonatomic, strong) UIView *superView;
 @property (nonatomic, strong) UIDocumentInteractionController *docController;
+@property (nonatomic, strong) NSArray *activityItems;
 
 // Private methods
 - (NSString *)UTIForURL:(NSURL *)url;
@@ -65,6 +66,32 @@
     }
     return self;
 }
+
+#pragma mark - direct documentInteractionController access
+
+- (instancetype)initWithActivityItem:(id)item inViewController:(UIViewController *)viewController andRect:(CGRect)rect
+{
+    if (self = [super init]) {
+        self.superViewController = viewController;
+        self.superView = self.superView ?: viewController.view;
+        self.rect = rect;
+        self.activityItems = @[item];
+    }
+    return self;
+}
+
+- (void)showDocumentInteractionController
+{
+    NSAssert(self.activityItems,@"You must set activityItems when directly showing the documentInteractionController.");
+    NSAssert(self.superViewController,@"You must set a superViewController when directly showing the documentInteractionController.");
+    NSAssert(self.superView,@"You must set a superView when directly showing the documentInteractionController.");
+    if ([self canPerformWithActivityItems:self.activityItems]) {
+        [self prepareWithActivityItems:self.activityItems];
+        [self performActivity];
+    }
+}
+
+#pragma mark -
 
 - (NSString *)activityType
 {

@@ -30,4 +30,8 @@
 
 - (void)dismissDocumentInteractionControllerAnimated:(BOOL)animated;
 
+// Directly show the document interaction controller without using this activity.
+- (instancetype)initWithActivityItem:(id)item inViewController:(UIViewController *)viewController andRect:(CGRect)rect;
+- (void)showDocumentInteractionController;
+
 @end
