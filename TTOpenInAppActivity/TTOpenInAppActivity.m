@@ -162,7 +162,8 @@
 - (void)openDocumentInteractionControllerWithFileURL:(NSURL *)fileURL
 {
     // Open "Open in"-menu
-    self.docController = [UIDocumentInteractionController interactionControllerWithURL:fileURL];
+    // To workaround incompatibility of relative urls with AirDrop feature. We send absolute url to docController
+    self.docController = [UIDocumentInteractionController interactionControllerWithURL:[fileURL absoluteURL]];
     self.docController.delegate = self;
     self.docController.UTI = [self UTIForURL:fileURL];
     BOOL sucess; // Sucess is true if it was possible to open the controller and there are apps available
