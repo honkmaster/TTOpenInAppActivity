@@ -1,7 +1,8 @@
 Pod::Spec.new do |s|
   s.name             = 'TTOpenInAppActivity'
-  s.version          = '1.1'
-  s.license          = 'MIT'
+  s.version          = '1.2'
+  s.ios.deployment_target = '8.0'
+  s.license  =  { :type => 'MIT', :file => 'LICENSE' }
   s.summary          = 'TTOpenInAppActivity is a UIActivity subclass that provides an "Open In ..." action to a UIActivityViewController.'
   s.description      = <<-DESC
                               TTOpenInAppActivity is a UIActivity subclass that provides an "Open In ..." action to a UIActivityViewController.
@@ -9,12 +10,11 @@ Pod::Spec.new do |s|
                               Supported item types are NSURL instances that point to local files and UIImage instances.
                           DESC
   s.homepage         = 'https://github.com/honkmaster/TTOpenInAppActivity'
-  s.authors          = { 'Tobias Tiemerding' => 'http://www.tiemerding.com' }
-  s.source           = { :git => 'https://github.com/honkmaster/TTOpenInAppActivity.git', :tag => '1.1' }
+  s.authors          = 'Tobias Tiemerding' => 'tobias@tiemerding.com'
+  s.source           = {:git => 'https://github.com/honkmaster/TTOpenInAppActivity.git', :tag => s.version.to_s }
   s.source_files     = 'TTOpenInAppActivity/*.{h,m}'
   s.resources        = 'TTOpenInAppActivity/*.png'
-  s.resource_bundles = { 'TTOpenInAppActivity' => ['bundles/*.lproj'] }
-  s.frameworks       = 'UIKit', 'MobileCoreServices', 'Coregraphics', 'ImageIO', 'Foundation'
+  s.resource_bundles = 'TTOpenInAppActivity/TTOpenInAppActivity.bundle'
+  s.frameworks       = 'UIKit', 'MobileCoreServices', 'ImageIO', 'Foundation'
   s.requires_arc     = true
-  s.platform         = :ios, '6.0'
 end

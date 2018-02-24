@@ -1,9 +1,7 @@
 //
 //  AppDelegate.m
-//  ExampleTTOpenInAppActivity
 //
-//  Created by Tobias Tiemerding on 1/10/13.
-//  Copyright (c) 2013 Tobias Tiemerding. All rights reserved.
+//  Copyright (c) 2012-2018 Tobias Tiemerding
 //
 
 #import "AppDelegate.h"

@@ -29,48 +29,46 @@
 
 ## Installation
 
-Add the `TTOpenInAppActivity` subfolder to your project. Required libraries: `UIKit`, `CoreGraphics`, `ImageIO` and `MobileCoreServices`.
+### From CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like `TTOpenInAppActivity` in your projects. First, add the following line to your [Podfile](http://guides.cocoapods.org/using/using-cocoapods.html):
+
+```ruby
+pod 'TTOpenInAppActivity'
+```
+
+If you want to use the latest features of `TTOpenInAppActivity` use normal external source dependencies.
+
+```ruby
+pod 'TTOpenInAppActivity', :git => 'https://github.com/honkmaster/TTOpenInAppActivity.git'
+```
+
+### Manually
+
+* Add the `TTOpenInAppActivity` subfolder to your project. 
+* Add the required frameworks `UIKit`, `ImageIO` and `MobileCoreServices` to your project.
 
 ## Usage.
-
-- We keep a weak referemce to the superview (UIActionSheet). In this way we dismiss the UIActionSheet ans instead display the UIDocumentInterActionController.
-- `TTOpenInAppActivity` needs to be initalized with the current view (iPhone & iPad) and a) a CGRect or b) a UIBarButtonItem (both only for iPad) from where it can present the UIDocumentInterActionController.
-- See example project.
 
 ```objectivec
 NSURL *URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"empty" ofType:@"pdf"]];
 TTOpenInAppActivity *openInAppActivity = [[TTOpenInAppActivity alloc] initWithView:self.view andRect:((UIButton *)sender).frame];
 UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[URL] applicationActivities:@[openInAppActivity]];
     
-if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    // Store reference to superview (UIActionSheet) to allow dismissal
-    openInAppActivity.superViewController = activityViewController;
-    // Show UIActivityViewController 
-    [self presentViewController:activityViewController animated:YES completion:NULL];
-} else {
-    // Create pop up
-    self.activityPopoverController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
-    // Store reference to superview (UIPopoverController) to allow dismissal
-    openInAppActivity.superViewController = self.activityPopoverController;
-    // Show UIActivityViewController in popup
-    [self.activityPopoverController presentPopoverFromRect:((UIButton *)sender).frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-}
-
+activityViewController.popoverPresentationController.sourceView = self.view;
+activityViewController.popoverPresentationController.sourceRect = ((UIButton *)sender).frame;
+    
+[self presentViewController:activityViewController animated:YES completion:NULL];
 ```
 
-## Contributer (Thank You!)
+## Contributers (Thank You!)
 
 - [Vincent Tourraine](https://github.com/vtourraine) 
 - [Jesse Ditson](https://github.com/jesseditson)
 
 ## License
 
-Copyright (c) 2012-2015 Tobias Tiemerding
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+`TTOpenInAppActivity` is distributed under the terms and conditions of the [MIT license](https://github.com/honkmaster/TTOpenInAppActivity/blob/master/LICENSE).
 
 

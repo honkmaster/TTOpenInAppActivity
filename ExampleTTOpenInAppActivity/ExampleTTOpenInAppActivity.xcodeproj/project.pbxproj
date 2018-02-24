@@ -7,32 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C1898232041723B00B2BD82 /* TTOpenInAppActivity.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3C1898222041723B00B2BD82 /* TTOpenInAppActivity.bundle */; };
+		3C189828204175B100B2BD82 /* empty.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3C189826204175B100B2BD82 /* empty.pdf */; };
+		3C189829204175B100B2BD82 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C189827204175B100B2BD82 /* Default-568h@2x.png */; };
 		3C4D03FA169EAE4A00888955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4D03F9169EAE4A00888955 /* UIKit.framework */; };
 		3C4D03FC169EAE4A00888955 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4D03FB169EAE4A00888955 /* Foundation.framework */; };
 		3C4D03FE169EAE4A00888955 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4D03FD169EAE4A00888955 /* CoreGraphics.framework */; };
 		3C4D0404169EAE4A00888955 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D0402169EAE4A00888955 /* InfoPlist.strings */; };
 		3C4D0406169EAE4A00888955 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D0405169EAE4A00888955 /* main.m */; };
 		3C4D040A169EAE4A00888955 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D0409169EAE4A00888955 /* AppDelegate.m */; };
-		3C4D040C169EAE4A00888955 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D040B169EAE4A00888955 /* Default.png */; };
-		3C4D040E169EAE4A00888955 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D040D169EAE4A00888955 /* Default@2x.png */; };
-		3C4D0410169EAE4A00888955 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D040F169EAE4A00888955 /* Default-568h@2x.png */; };
-		3C4D0413169EAE4A00888955 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D0411169EAE4A00888955 /* MainStoryboard_iPhone.storyboard */; };
-		3C4D0416169EAE4A00888955 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D0414169EAE4A00888955 /* MainStoryboard_iPad.storyboard */; };
+		3C4D0413169EAE4A00888955 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D0411169EAE4A00888955 /* MainStoryboard.storyboard */; };
 		3C4D0419169EAE4A00888955 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D0418169EAE4A00888955 /* ViewController.m */; };
 		3C4D0432169EAEEE00888955 /* TTOpenInAppActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D042D169EAEEE00888955 /* TTOpenInAppActivity.m */; };
-		3C4D0433169EAEEE00888955 /* TTOpenInAppActivity.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D042E169EAEEE00888955 /* TTOpenInAppActivity.png */; };
-		3C4D0434169EAEEE00888955 /* TTOpenInAppActivity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D042F169EAEEE00888955 /* TTOpenInAppActivity@2x.png */; };
-		3C4D0438169EAFAF00888955 /* empty.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D0437169EAFAF00888955 /* empty.pdf */; };
 		3C4D043C169EB09900888955 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4D043B169EB09900888955 /* MobileCoreServices.framework */; };
-		3C7F9CB819D7FBE500FC7367 /* TTOpenInAppActivity8.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C7F9CB519D7FBE500FC7367 /* TTOpenInAppActivity8.png */; };
-		3C7F9CB919D7FBE500FC7367 /* TTOpenInAppActivity8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C7F9CB619D7FBE500FC7367 /* TTOpenInAppActivity8@2x.png */; };
-		3C7F9CBA19D7FBE500FC7367 /* TTOpenInAppActivity8@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C7F9CB719D7FBE500FC7367 /* TTOpenInAppActivity8@3x.png */; };
 		3CDA832919EBCD880017448B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDA832819EBCD880017448B /* ImageIO.framework */; };
-		3CEE8BFE17B30CCD0034D9F4 /* TTOpenInAppActivity7.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEE8BFC17B30CCD0034D9F4 /* TTOpenInAppActivity7.png */; };
-		3CEE8BFF17B30CCD0034D9F4 /* TTOpenInAppActivity7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEE8BFD17B30CCD0034D9F4 /* TTOpenInAppActivity7@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C1898222041723B00B2BD82 /* TTOpenInAppActivity.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TTOpenInAppActivity.bundle; sourceTree = "<group>"; };
+		3C189826204175B100B2BD82 /* empty.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = empty.pdf; sourceTree = "<group>"; };
+		3C189827204175B100B2BD82 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3C4D03F6169EAE4A00888955 /* ExampleTTOpenInAppActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleTTOpenInAppActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C4D03F9169EAE4A00888955 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3C4D03FB169EAE4A00888955 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -43,25 +37,13 @@
 		3C4D0407169EAE4A00888955 /* ExampleTTOpenInAppActivity-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExampleTTOpenInAppActivity-Prefix.pch"; sourceTree = "<group>"; };
 		3C4D0408169EAE4A00888955 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C4D0409169EAE4A00888955 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3C4D040B169EAE4A00888955 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		3C4D040D169EAE4A00888955 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		3C4D040F169EAE4A00888955 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3C4D0412169EAE4A00888955 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		3C4D0415169EAE4A00888955 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		3C4D0412169EAE4A00888955 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		3C4D0417169EAE4A00888955 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3C4D0418169EAE4A00888955 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3C4D042C169EAEEE00888955 /* TTOpenInAppActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTOpenInAppActivity.h; sourceTree = "<group>"; };
 		3C4D042D169EAEEE00888955 /* TTOpenInAppActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTOpenInAppActivity.m; sourceTree = "<group>"; };
-		3C4D042E169EAEEE00888955 /* TTOpenInAppActivity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TTOpenInAppActivity.png; sourceTree = "<group>"; };
-		3C4D042F169EAEEE00888955 /* TTOpenInAppActivity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TTOpenInAppActivity@2x.png"; sourceTree = "<group>"; };
-		3C4D0437169EAFAF00888955 /* empty.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = empty.pdf; sourceTree = SOURCE_ROOT; };
 		3C4D043B169EB09900888955 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		3C7F9CB519D7FBE500FC7367 /* TTOpenInAppActivity8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TTOpenInAppActivity8.png; sourceTree = "<group>"; };
-		3C7F9CB619D7FBE500FC7367 /* TTOpenInAppActivity8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TTOpenInAppActivity8@2x.png"; sourceTree = "<group>"; };
-		3C7F9CB719D7FBE500FC7367 /* TTOpenInAppActivity8@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TTOpenInAppActivity8@3x.png"; sourceTree = "<group>"; };
 		3CDA832819EBCD880017448B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		3CEE8BFC17B30CCD0034D9F4 /* TTOpenInAppActivity7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TTOpenInAppActivity7.png; sourceTree = "<group>"; };
-		3CEE8BFD17B30CCD0034D9F4 /* TTOpenInAppActivity7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TTOpenInAppActivity7@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +97,7 @@
 				3C4D042B169EAEEE00888955 /* TTOpenInAppActivity */,
 				3C4D0408169EAE4A00888955 /* AppDelegate.h */,
 				3C4D0409169EAE4A00888955 /* AppDelegate.m */,
-				3C4D0411169EAE4A00888955 /* MainStoryboard_iPhone.storyboard */,
-				3C4D0414169EAE4A00888955 /* MainStoryboard_iPad.storyboard */,
+				3C4D0411169EAE4A00888955 /* MainStoryboard.storyboard */,
 				3C4D0417169EAE4A00888955 /* ViewController.h */,
 				3C4D0418169EAE4A00888955 /* ViewController.m */,
 				3C4D0400169EAE4A00888955 /* Supporting Files */,
@@ -127,14 +108,12 @@
 		3C4D0400169EAE4A00888955 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3C4D0437169EAFAF00888955 /* empty.pdf */,
+				3C189827204175B100B2BD82 /* Default-568h@2x.png */,
+				3C189826204175B100B2BD82 /* empty.pdf */,
 				3C4D0401169EAE4A00888955 /* ExampleTTOpenInAppActivity-Info.plist */,
 				3C4D0402169EAE4A00888955 /* InfoPlist.strings */,
 				3C4D0405169EAE4A00888955 /* main.m */,
 				3C4D0407169EAE4A00888955 /* ExampleTTOpenInAppActivity-Prefix.pch */,
-				3C4D040B169EAE4A00888955 /* Default.png */,
-				3C4D040D169EAE4A00888955 /* Default@2x.png */,
-				3C4D040F169EAE4A00888955 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -142,15 +121,9 @@
 		3C4D042B169EAEEE00888955 /* TTOpenInAppActivity */ = {
 			isa = PBXGroup;
 			children = (
+				3C1898222041723B00B2BD82 /* TTOpenInAppActivity.bundle */,
 				3C4D042C169EAEEE00888955 /* TTOpenInAppActivity.h */,
 				3C4D042D169EAEEE00888955 /* TTOpenInAppActivity.m */,
-				3C4D042E169EAEEE00888955 /* TTOpenInAppActivity.png */,
-				3C4D042F169EAEEE00888955 /* TTOpenInAppActivity@2x.png */,
-				3CEE8BFC17B30CCD0034D9F4 /* TTOpenInAppActivity7.png */,
-				3CEE8BFD17B30CCD0034D9F4 /* TTOpenInAppActivity7@2x.png */,
-				3C7F9CB519D7FBE500FC7367 /* TTOpenInAppActivity8.png */,
-				3C7F9CB619D7FBE500FC7367 /* TTOpenInAppActivity8@2x.png */,
-				3C7F9CB719D7FBE500FC7367 /* TTOpenInAppActivity8@3x.png */,
 			);
 			name = TTOpenInAppActivity;
 			path = ../../TTOpenInAppActivity;
@@ -207,20 +180,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C7F9CBA19D7FBE500FC7367 /* TTOpenInAppActivity8@3x.png in Resources */,
+				3C189828204175B100B2BD82 /* empty.pdf in Resources */,
 				3C4D0404169EAE4A00888955 /* InfoPlist.strings in Resources */,
-				3C7F9CB919D7FBE500FC7367 /* TTOpenInAppActivity8@2x.png in Resources */,
-				3C4D040C169EAE4A00888955 /* Default.png in Resources */,
-				3C7F9CB819D7FBE500FC7367 /* TTOpenInAppActivity8.png in Resources */,
-				3C4D040E169EAE4A00888955 /* Default@2x.png in Resources */,
-				3C4D0410169EAE4A00888955 /* Default-568h@2x.png in Resources */,
-				3C4D0413169EAE4A00888955 /* MainStoryboard_iPhone.storyboard in Resources */,
-				3CEE8BFE17B30CCD0034D9F4 /* TTOpenInAppActivity7.png in Resources */,
-				3C4D0416169EAE4A00888955 /* MainStoryboard_iPad.storyboard in Resources */,
-				3C4D0433169EAEEE00888955 /* TTOpenInAppActivity.png in Resources */,
-				3C4D0434169EAEEE00888955 /* TTOpenInAppActivity@2x.png in Resources */,
-				3CEE8BFF17B30CCD0034D9F4 /* TTOpenInAppActivity7@2x.png in Resources */,
-				3C4D0438169EAFAF00888955 /* empty.pdf in Resources */,
+				3C4D0413169EAE4A00888955 /* MainStoryboard.storyboard in Resources */,
+				3C189829204175B100B2BD82 /* Default-568h@2x.png in Resources */,
+				3C1898232041723B00B2BD82 /* TTOpenInAppActivity.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,20 +213,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		3C4D0411169EAE4A00888955 /* MainStoryboard_iPhone.storyboard */ = {
+		3C4D0411169EAE4A00888955 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3C4D0412169EAE4A00888955 /* en */,
 			);
-			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		3C4D0414169EAE4A00888955 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C4D0415169EAE4A00888955 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -271,28 +227,11 @@
 		3C4D041A169EAE4A00888955 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -303,21 +242,11 @@
 		3C4D041B169EAE4A00888955 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -332,6 +261,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ExampleTTOpenInAppActivity/ExampleTTOpenInAppActivity-Prefix.pch";
 				INFOPLIST_FILE = "ExampleTTOpenInAppActivity/ExampleTTOpenInAppActivity-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TTOpenInAppActivity.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -343,6 +274,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ExampleTTOpenInAppActivity/ExampleTTOpenInAppActivity-Prefix.pch";
 				INFOPLIST_FILE = "ExampleTTOpenInAppActivity/ExampleTTOpenInAppActivity-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TTOpenInAppActivity.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

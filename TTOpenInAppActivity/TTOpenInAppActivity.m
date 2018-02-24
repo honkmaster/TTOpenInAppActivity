@@ -1,50 +1,45 @@
 //
 //  TTOpenInAppActivity.m
 //
-//  Created by Tobias Tiemerding on 12/25/12.
-//  Copyright (c) 2012-2013 Tobias Tiemerding
-// 
-//  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-//  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//  Copyright (c) 2012-2018 Tobias Tiemerding
+//
 
 #import "TTOpenInAppActivity.h"
 #import <MobileCoreServices/MobileCoreServices.h> // For UTI
 #import <ImageIO/ImageIO.h>
 
-@interface TTOpenInAppActivity () <UIActionSheetDelegate>
+@interface TTOpenInAppActivity ()
 
 // Private attributes
 @property (nonatomic, strong) NSArray *fileURLs;
 @property (atomic) CGRect rect;
 @property (nonatomic, strong) UIBarButtonItem *barButtonItem;
 @property (nonatomic, strong) UIView *superView;
-@property (nonatomic, strong) UIDocumentInteractionController *docController;
+@property (nonatomic, strong) UIDocumentInteractionController *documentInteractionController;
 
 // Private methods
 - (NSString *)UTIForURL:(NSURL *)url;
 - (void)openDocumentInteractionControllerWithFileURL:(NSURL *)fileURL;
-- (void)openSelectFileActionSheet;
+- (void)openSelectFileAlertController;
 
 @end
 
 @implementation TTOpenInAppActivity
 @synthesize rect = _rect;
 @synthesize superView = _superView;
-@synthesize superViewController = _superViewController;
 
 + (NSBundle *)bundle
 {
-    NSBundle *bundle;
-    NSURL *openInAppActivityBundleURL = [[NSBundle mainBundle] URLForResource:@"TTOpenInAppActivity" withExtension:@"bundle"];
-
-    if (openInAppActivityBundleURL) {
+    NSBundle *bundle = [NSBundle bundleForClass:[TTOpenInAppActivity class]];
+    NSURL *url = [bundle URLForResource:@"TTOpenInAppActivity" withExtension:@"bundle"];
+    
+    if (url) {
         // TTOpenInAppActivity.bundle will likely only exist when used via CocoaPods
-        bundle = [NSBundle bundleWithURL:openInAppActivityBundleURL];
+        bundle = [NSBundle bundleWithURL:url];
     } else {
         bundle = [NSBundle mainBundle];
     }
-
+    
     return bundle;
 }
 
@@ -73,17 +68,15 @@
 
 - (NSString *)activityTitle
 {
-    return NSLocalizedStringFromTableInBundle(@"Open in ...", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil);
+    return NSLocalizedStringFromTableInBundle(@"Open in …", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil);
 }
 
 - (UIImage *)activityImage
 {
-    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0){
-        return [UIImage imageNamed:@"TTOpenInAppActivity8"];
-    } else if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0){
-        return [UIImage imageNamed:@"TTOpenInAppActivity7"];
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+        return [UIImage imageWithContentsOfFile:[[TTOpenInAppActivity bundle] pathForResource:@"TTOpenInAppActivity" ofType:@"png"]];
     } else {
-        return [UIImage imageNamed:@"TTOpenInAppActivity"];
+        return [UIImage imageWithContentsOfFile:[[TTOpenInAppActivity bundle] pathForResource:@"TTOpenInAppActivity_iPad" ofType:@"png"]];
     }
 }
 
@@ -122,33 +115,12 @@
 
 - (void)performActivity
 {
-    if(!self.superViewController){
-        [self activityDidFinish:YES];
-        return;
+    if (self.fileURLs.count > 1) {
+        [self openSelectFileAlertController];
     }
-
-    void(^presentOpenIn)(void) = ^{
-        if (self.fileURLs.count > 1) {
-            [self openSelectFileActionSheet];
-        }
-        else {
-            // Open UIDocumentInteractionController
-            [self openDocumentInteractionControllerWithFileURL:self.fileURLs.lastObject];
-        }
-    };
-
-    //  Check to see if it's presented via popover
-    if ([self.superViewController respondsToSelector:@selector(dismissPopoverAnimated:)]) {
-        [self.superViewController dismissPopoverAnimated:YES];
-        [((UIPopoverController *)self.superViewController).delegate popoverControllerDidDismissPopover:self.superViewController];
-        
-        presentOpenIn();
-    } else if([self.superViewController presentingViewController]) {    //  Not in popover, dismiss as if iPhone
-        [self.superViewController dismissViewControllerAnimated:YES completion:^(void){
-            presentOpenIn();
-        }];
-    } else {
-        presentOpenIn();
+    else {
+        // Open UIDocumentInteractionController
+        [self openDocumentInteractionControllerWithFileURL:self.fileURLs.lastObject];
     }
 }
 
@@ -161,34 +133,44 @@
 
 - (void)openDocumentInteractionControllerWithFileURL:(NSURL *)fileURL
 {
+    if (!fileURL) {
+        // Return NO because there was no valid fileURL.
+        [self activityDidFinish:NO];
+        return;
+    }
+    
     // Open "Open in"-menu
-    self.docController = [UIDocumentInteractionController interactionControllerWithURL:fileURL];
-    self.docController.delegate = self;
-    self.docController.UTI = [self UTIForURL:fileURL];
+    self.documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:fileURL];
+    self.documentInteractionController.delegate = self;
+    self.documentInteractionController.UTI = [self UTIForURL:fileURL];
     BOOL sucess; // Sucess is true if it was possible to open the controller and there are apps available
     
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-        sucess = [self.docController presentOpenInMenuFromRect:CGRectZero inView:self.superView animated:YES];
+    if(self.barButtonItem){
+        sucess = [self.documentInteractionController presentOpenInMenuFromBarButtonItem:self.barButtonItem animated:YES];
+    } else if (CGRectIsEmpty(self.rect) == false){
+        sucess = [self.documentInteractionController presentOpenInMenuFromRect:self.rect inView:self.superView animated:YES];
     } else {
-        if(self.barButtonItem){
-            sucess = [self.docController presentOpenInMenuFromBarButtonItem:self.barButtonItem animated:YES];
-        } else {
-            sucess = [self.docController presentOpenInMenuFromRect:self.rect inView:self.superView animated:YES];
-        }
+        sucess = [self.documentInteractionController presentOpenInMenuFromRect:self.rect inView:self.superView animated:YES];
     }
     
     if(!sucess){
         // There is no app to handle this file
         NSString *deviceType = [UIDevice currentDevice].localizedModel;
         NSString *message = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Your %@ doesn't seem to have any other Apps installed that can open this document.", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil), deviceType];
-
+        NSString *title = NSLocalizedStringFromTableInBundle(@"No suitable Apps installed", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil);
+        
         // Display alert
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTableInBundle(@"No suitable App installed", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil)
-                                                        message:message
-                                                       delegate:nil
-                                              cancelButtonTitle:NSLocalizedStringFromTableInBundle(@"OK", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil)
-                                              otherButtonTitles:nil];
-        [alert show];
+        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+        
+        title = NSLocalizedStringFromTableInBundle(@"OK", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil);
+        UIAlertAction* alertAction = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleCancel handler:nil];
+        [alertController addAction:alertAction];
+        
+        UIViewController *topController = UIApplication.sharedApplication.delegate.window.rootViewController;
+        while (topController.presentedViewController){
+            topController = topController.presentedViewController;
+        }
+        [topController presentViewController:alertController animated:YES completion:nil];
         
         // Inform app that the activity has finished
         // Return NO because the service was canceled and did not finish because of an error.
@@ -197,37 +179,48 @@
     }
 }
 
-- (void)dismissDocumentInteractionControllerAnimated:(BOOL)animated {
+- (void)dismissDocumentInteractionControllerAnimated:(BOOL)animated
+{
     // Hide menu
-    [self.docController dismissMenuAnimated:animated];
+    [self.documentInteractionController dismissMenuAnimated:animated];
     
     // Inform app that the activity has finished
+    // Return NO because the service was canceled.
     [self activityDidFinish:NO];
 }
 
-- (void)openSelectFileActionSheet
+- (void)openSelectFileAlertController
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedStringFromTableInBundle(@"Select a file", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil)
-                                                             delegate:self
-                                                    cancelButtonTitle:nil
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:nil];
+    NSString *title = NSLocalizedStringFromTableInBundle(@"Select a file", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil);
+    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     
     for (NSURL *fileURL in self.fileURLs) {
-        [actionSheet addButtonWithTitle:[fileURL lastPathComponent]];
+        UIAlertAction* alertAction = [UIAlertAction actionWithTitle:fileURL.lastPathComponent style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+            [self openDocumentInteractionControllerWithFileURL:fileURL];
+        }];
+        [alertController addAction:alertAction];
     }
     
-    actionSheet.cancelButtonIndex = [actionSheet addButtonWithTitle:NSLocalizedStringFromTableInBundle(@"Cancel", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil)];
-
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-        [actionSheet showFromRect:CGRectZero inView:self.superView animated:YES];
-    } else {
-        if(self.barButtonItem){
-            [actionSheet showFromBarButtonItem:self.barButtonItem animated:YES];
-        } else {
-            [actionSheet showFromRect:self.rect inView:self.superView animated:YES];
-        }
+    title = NSLocalizedStringFromTableInBundle(@"Cancel", @"TTOpenInAppActivityLocalizable", [TTOpenInAppActivity bundle], nil);
+    UIAlertAction* alertAction = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleCancel handler:^(UIAlertAction * action){
+        // Inform app that the activity has finished
+        // Return NO because the service was canceled.
+        [self activityDidFinish:NO];
+    }];
+    [alertController addAction:alertAction];
+    
+    alertController.popoverPresentationController.sourceView = self.superView;
+    if(self.barButtonItem){
+        alertController.popoverPresentationController.barButtonItem = self.barButtonItem;
+    } else if (!CGRectIsNull(self.rect)) {
+        alertController.popoverPresentationController.sourceRect = self.rect;
     }
+    
+    UIViewController *topController = UIApplication.sharedApplication.delegate.window.rootViewController;
+    while (topController.presentedViewController){
+        topController = topController.presentedViewController;
+    }
+    [topController presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - UIDocumentInteractionControllerDelegate
@@ -246,6 +239,9 @@
     if([self.delegate respondsToSelector:@selector(openInAppActivityDidDismissDocumentInteractionController:)]) {
         [self.delegate openInAppActivityDidDismissDocumentInteractionController:self];
     }
+    
+    // Inform app that the activity has finished
+    [self activityDidFinish:YES];
 }
 
 - (void) documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(NSString *)application
@@ -260,18 +256,6 @@
     
     // Inform app that the activity has finished
     [self activityDidFinish:YES];
-}
-
-#pragma mark - Action sheet delegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex != actionSheet.cancelButtonIndex) {
-        [self openDocumentInteractionControllerWithFileURL:self.fileURLs[(NSUInteger)buttonIndex]];
-    } else {
-	    // Inform app that the activity has finished
-	    [self activityDidFinish:NO];
-    }
 }
 
 #pragma mark - Image conversion
@@ -317,7 +301,7 @@
 
 - (void)dealloc
 {
-    self.docController.delegate = nil;
+    self.documentInteractionController.delegate = nil;
 }
 
 @end
