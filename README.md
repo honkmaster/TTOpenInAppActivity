@@ -1,6 +1,6 @@
 # TTOpenInAppActivity
 
-`TTOpenInAppActivity` is a `UIActivity` subclass that provides an "Open In ..." action to a `UIActivityViewController`. `TTOpenInAppActivity` uses an UIDocumentInteractionController to present all Apps than can handle the document specified with by the activity items.
+`TTOpenInAppActivity` is a `UIActivity` subclass that provides an "Open In ..." action to a `UIActivityViewController`. `TTOpenInAppActivity` uses an UIDocumentInteractionController to present all Apps that can handle the document specified with by the activity items.
 
 <img src=https://github.com/honkmaster/TTOpenInAppActivity/blob/master/Screenshot.png width="414px" />
 
