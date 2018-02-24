@@ -30,8 +30,8 @@
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dyN-7k-2O5"/>
-                        <viewControllerLayoutGuide type="bottom" id="2ek-KY-AXA"/>
+                        <viewControllerLayoutGuide type="top" id="NDk-gH-QXn"/>
+                        <viewControllerLayoutGuide type="bottom" id="O2m-LC-hZY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>

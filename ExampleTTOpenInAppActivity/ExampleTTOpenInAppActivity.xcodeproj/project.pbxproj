@@ -10,13 +10,14 @@
 		3C1898232041723B00B2BD82 /* TTOpenInAppActivity.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3C1898222041723B00B2BD82 /* TTOpenInAppActivity.bundle */; };
 		3C189828204175B100B2BD82 /* empty.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3C189826204175B100B2BD82 /* empty.pdf */; };
 		3C189829204175B100B2BD82 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C189827204175B100B2BD82 /* Default-568h@2x.png */; };
+		3C1898502041A1C000B2BD82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C18984C2041A1C000B2BD82 /* LaunchScreen.storyboard */; };
+		3C1898512041A1C000B2BD82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C18984E2041A1C000B2BD82 /* Main.storyboard */; };
 		3C4D03FA169EAE4A00888955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4D03F9169EAE4A00888955 /* UIKit.framework */; };
 		3C4D03FC169EAE4A00888955 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4D03FB169EAE4A00888955 /* Foundation.framework */; };
 		3C4D03FE169EAE4A00888955 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4D03FD169EAE4A00888955 /* CoreGraphics.framework */; };
 		3C4D0404169EAE4A00888955 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D0402169EAE4A00888955 /* InfoPlist.strings */; };
 		3C4D0406169EAE4A00888955 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D0405169EAE4A00888955 /* main.m */; };
 		3C4D040A169EAE4A00888955 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D0409169EAE4A00888955 /* AppDelegate.m */; };
-		3C4D0413169EAE4A00888955 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D0411169EAE4A00888955 /* MainStoryboard.storyboard */; };
 		3C4D0419169EAE4A00888955 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D0418169EAE4A00888955 /* ViewController.m */; };
 		3C4D0432169EAEEE00888955 /* TTOpenInAppActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D042D169EAEEE00888955 /* TTOpenInAppActivity.m */; };
 		3C4D043C169EB09900888955 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4D043B169EB09900888955 /* MobileCoreServices.framework */; };
@@ -27,6 +28,8 @@
 		3C1898222041723B00B2BD82 /* TTOpenInAppActivity.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TTOpenInAppActivity.bundle; sourceTree = "<group>"; };
 		3C189826204175B100B2BD82 /* empty.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = empty.pdf; sourceTree = "<group>"; };
 		3C189827204175B100B2BD82 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3C18984D2041A1C000B2BD82 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = ExampleTTOpenInAppActivity/en.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		3C18984F2041A1C000B2BD82 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = ExampleTTOpenInAppActivity/en.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		3C4D03F6169EAE4A00888955 /* ExampleTTOpenInAppActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleTTOpenInAppActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C4D03F9169EAE4A00888955 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3C4D03FB169EAE4A00888955 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,7 +40,6 @@
 		3C4D0407169EAE4A00888955 /* ExampleTTOpenInAppActivity-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExampleTTOpenInAppActivity-Prefix.pch"; sourceTree = "<group>"; };
 		3C4D0408169EAE4A00888955 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C4D0409169EAE4A00888955 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3C4D0412169EAE4A00888955 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		3C4D0417169EAE4A00888955 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3C4D0418169EAE4A00888955 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3C4D042C169EAEEE00888955 /* TTOpenInAppActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTOpenInAppActivity.h; sourceTree = "<group>"; };
@@ -94,13 +96,12 @@
 		3C4D03FF169EAE4A00888955 /* ExampleTTOpenInAppActivity */ = {
 			isa = PBXGroup;
 			children = (
-				3C4D042B169EAEEE00888955 /* TTOpenInAppActivity */,
 				3C4D0408169EAE4A00888955 /* AppDelegate.h */,
 				3C4D0409169EAE4A00888955 /* AppDelegate.m */,
-				3C4D0411169EAE4A00888955 /* MainStoryboard.storyboard */,
+				3C4D0400169EAE4A00888955 /* Supporting Files */,
+				3C4D042B169EAEEE00888955 /* TTOpenInAppActivity */,
 				3C4D0417169EAE4A00888955 /* ViewController.h */,
 				3C4D0418169EAE4A00888955 /* ViewController.m */,
-				3C4D0400169EAE4A00888955 /* Supporting Files */,
 			);
 			path = ExampleTTOpenInAppActivity;
 			sourceTree = "<group>";
@@ -124,6 +125,8 @@
 				3C1898222041723B00B2BD82 /* TTOpenInAppActivity.bundle */,
 				3C4D042C169EAEEE00888955 /* TTOpenInAppActivity.h */,
 				3C4D042D169EAEEE00888955 /* TTOpenInAppActivity.m */,
+				3C18984C2041A1C000B2BD82 /* LaunchScreen.storyboard */,
+				3C18984E2041A1C000B2BD82 /* Main.storyboard */,
 			);
 			name = TTOpenInAppActivity;
 			path = ../../TTOpenInAppActivity;
@@ -182,8 +185,9 @@
 			files = (
 				3C189828204175B100B2BD82 /* empty.pdf in Resources */,
 				3C4D0404169EAE4A00888955 /* InfoPlist.strings in Resources */,
-				3C4D0413169EAE4A00888955 /* MainStoryboard.storyboard in Resources */,
 				3C189829204175B100B2BD82 /* Default-568h@2x.png in Resources */,
+				3C1898512041A1C000B2BD82 /* Main.storyboard in Resources */,
+				3C1898502041A1C000B2BD82 /* LaunchScreen.storyboard in Resources */,
 				3C1898232041723B00B2BD82 /* TTOpenInAppActivity.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,20 +209,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		3C18984C2041A1C000B2BD82 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C18984D2041A1C000B2BD82 /* en */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3C18984E2041A1C000B2BD82 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C18984F2041A1C000B2BD82 /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		3C4D0402169EAE4A00888955 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3C4D0403169EAE4A00888955 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3C4D0411169EAE4A00888955 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C4D0412169EAE4A00888955 /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
