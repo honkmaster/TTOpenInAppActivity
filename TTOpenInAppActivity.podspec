@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/honkmaster/TTOpenInAppActivity.git', :tag => s.version.to_s }
   s.source_files     = 'TTOpenInAppActivity/*.{h,m}'
   s.resources = 'TTOpenInAppActivity/TTOpenInAppActivity.bundle'
-  s.frameworks       = 'UIKit', 'MobileCoreServices', 'ImageIO', 'Foundation'
+  s.frameworks       = 'UIKit', 'CoreServices', 'ImageIO', 'Foundation'
   s.requires_arc     = true
 end
